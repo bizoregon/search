@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversational Search</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <form action="">
+        I am searching for <select name="entity" id="entity-selector">
+                                <option value="projects">Projects</option>
+                                <option value="incentives">Incentives</option>
+                                <option value="contracts">Contracts</option>
+                                <option value="organizations">Organizations</option>
+                                <option value="contacts">Contacts</option>
+                            </select>
+                    where   <select name="property" id="property-selector">
+                                <option value="name">Name</option>
+                                <option value="status">Status</option>
+                                <option value="closeDate">Close Date</option>
+                                <option value="numberOfEmployees">Number of Employees</option>
+                                <option value="totalProjectCost">Total Project Cost</option>
+                            </select>
+                            <select name="operator" id="operator-selector">
+                                <option value="is">Is</option>
+                                <option value="contains">Contains</option>
+                                <option value="startsWith">Starts With</option>
+                                <option value="endsWith">Ends With</option>
+                            </select>
+
+                            <span id="searchInput"><input type="text"></span>
+            
+    </form>
+    <!-- <script src="data.js" type="module" ></script> -->
+    <script src="script.js" type="module" ></script>
+</body>
+</html>
