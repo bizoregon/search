@@ -1,6 +1,6 @@
 /** Utility that removes all existing options in operatorSelector. */
 function operatorSelectorCleaner() {
-  const operatorSelector = document.getElementById('operator-selector');
+  const operatorSelector = document.querySelector('.operator-selector');
 
   while (operatorSelector.options.length > 0) {
     operatorSelector.remove(0);
@@ -13,16 +13,17 @@ function operatorSelectorCleaner() {
  * 
  * @param {string} type - The string type of the data being passed in.
  */
-function createAndAddNewOptions(type) {
+function createAndAddNewOptions(type, id) {
+  const _id = id;
   switch (type) {
     case 'string':
-      stringOptionsBuilder();
+      stringOptionsBuilder(_id);
       break;
     case 'datetime':
-      dateTimeOptionsBuilder();
+      dateTimeOptionsBuilder(_id);
       break;
     case 'number':
-      numberOptionsBuilder();
+      numberOptionsBuilder(_id);
       break;
     default:
       break;
@@ -36,8 +37,8 @@ function createAndAddNewOptions(type) {
  * @param {string} type - The **type** of the property being passed in as a string.
  */
 function inputBuilder(type) {
-  let inputTextNode = document.createElement("INPUT");
-  let searchInput = document.getElementById('searchInput');
+  let inputTextNode = document.createElement("input");
+  let searchInput = document.querySelector('.search-input');
 
   // Determines what type of input should be 
   switch (type) {
@@ -66,9 +67,9 @@ function inputBuilder(type) {
   searchInput.append(inputTextNode);
 }
 
-/** Builds new string-based operatore options and adds them to operatorSelector */
-function stringOptionsBuilder() {
-  const operatorSelector = document.getElementById('operator-selector');
+/** Builds new string-based operator options and adds them to operatorSelector */
+function stringOptionsBuilder(id) {
+  const operatorSelector = document.querySelector('.operator-selector');
   let isOption = new Option('Is', 'is');
   let containsOption = new Option('Contains', 'contains');
   let startsWithOptions = new Option('Starts With', 'startsWith');
@@ -82,7 +83,7 @@ function stringOptionsBuilder() {
 
 /** Builds new datetime-based operatore options and adds them to operatorSelector */
 function dateTimeOptionsBuilder() {
-  const operatorSelector = document.getElementById('operator-selector');
+  const operatorSelector = document.querySelector('.operator-selector');
   const isOnOption = new Option('Is On', 'isOn');
   const isBeforeOption = new Option('Is Before', 'isBefore');
   const isOnOrBeforeOption = new Option('Is On Or Before', 'isOnOrBefore');
@@ -96,7 +97,7 @@ function dateTimeOptionsBuilder() {
 
 /** Builds new number-based operatore options and adds them to operatorSelector */
 function numberOptionsBuilder() {
-  const operatorSelector = document.getElementById('operator-selector');
+  const operatorSelector = document.querySelector('.operator-selector');
   const isOption = new Option("Is", "is");
   const greaterThanOption = new Option("Greater Than", "greaterThan");
   const lessThanOption = new Option("Less Than", "lessThan");
@@ -114,40 +115,40 @@ function numberOptionsBuilder() {
  * Creates and adds new options for operatorSelector that are string-based.
  * Builds an input of type 'string'.
  */
-function stringHandler() {
+function stringHandler(id) {
   operatorSelectorCleaner();
-  createAndAddNewOptions("string");
-  inputBuilder("string");
+  createAndAddNewOptions("string", id);
+  inputBuilder("string", id);
 }
 
 /**
  * Creates and adds new options for operatorSelector that are datetime-based.
  * Builds an input of type 'datetime-local'.
  */
-function dateTimeHandler() {
+function dateTimeHandler(id) {
   operatorSelectorCleaner();
-  createAndAddNewOptions("datetime");
-  inputBuilder("datetime");
+  createAndAddNewOptions("datetime", id);
+  inputBuilder("datetime", id);
 }
 
 /**
  * Creates and adds new options for operatorSelector that are number-based.
  * Builds an input of type 'number'.
  */
-function numberHandler() {
+function numberHandler(id) {
   operatorSelectorCleaner();
-  createAndAddNewOptions("number");
-  inputBuilder("number")
+  createAndAddNewOptions("number", id);
+  inputBuilder("number", id)
 }
 
 /**
  * Creates and adds new options for operatorSelector that are number-based.
  * Builds an input of type 'float'.
  */
-function floatHandler() {
+function floatHandler(id) {
   operatorSelectorCleaner();
-  createAndAddNewOptions("number");
-  inputBuilder("float");
+  createAndAddNewOptions("number", id);
+  inputBuilder("float", id);
 }
 
 export { operatorSelectorCleaner, 

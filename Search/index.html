@@ -8,32 +8,47 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <form action="">
-        I am searching for <select name="entity" id="entity-selector">
-                                <option value="projects">Projects</option>
-                                <option value="incentives">Incentives</option>
-                                <option value="contracts">Contracts</option>
-                                <option value="organizations">Organizations</option>
-                                <option value="contacts">Contacts</option>
-                            </select>
-                    where   <select name="property" id="property-selector">
-                                <option value="name">Name</option>
-                                <option value="status">Status</option>
-                                <option value="closeDate">Close Date</option>
-                                <option value="numberOfEmployees">Number of Employees</option>
-                                <option value="totalProjectCost">Total Project Cost</option>
-                            </select>
-                            <select name="operator" id="operator-selector">
-                                <option value="is">Is</option>
-                                <option value="contains">Contains</option>
-                                <option value="startsWith">Starts With</option>
-                                <option value="endsWith">Ends With</option>
-                            </select>
-
-                            <span id="searchInput"><input type="text"></span>
-            
-    </form>
-    <!-- <script src="data.js" type="module" ></script> -->
+    <div class="container">
+        <form action="">
+            <div class="form-row">
+                I am searching for <select name="entity" class="entity-selector">
+                    <option value="projects">Projects</option>
+                    <option value="incentives">Incentives</option>
+                    <option value="contracts">Contracts</option>
+                    <option value="organizations">Organizations</option>
+                    <option value="contacts">Contacts</option>
+                </select>
+        where   <select data-id="0" name="property" class="property-selector">
+                    <option value="name">Name</option>
+                    <optisazon value="status">Status</option>
+                    <option value="closeDate">Close Date</option>
+                    <option value="numberOfEmployees">Number of Employees</option>
+                    <option value="totalProjectCost">Total Project Cost</option>
+                </select>
+                <select data-id="0" name="operator" class="operator-selector">
+                    <option value="is">Is</option>
+                    <option value="contains">Contains</option>
+                    <option value="startsWith">Starts With</option>
+                    <option value="endsWith">Ends With</option>
+                </select>
+    
+                <span data-id="0" class="search-input"><input type="text"></span>
+            </div>
+            <div class="plus-row">
+                <a class="plus-link" href=""><i class="fas fa-plus-circle add-row"></i></a> 
+            </div>
+    
+            <div class="button-row">
+                <div class="button">
+                    <button type="submit">
+                        Search...
+                    </button>
+                </div>
+            </div>
+                
+        </form>
+    </div>
+    
     <script src="script.js" type="module" ></script>
 </body>
 </html>

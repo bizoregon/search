@@ -17,3 +17,23 @@ body {
   overflow: hidden;
 }
 
+.button-row {
+  text-align: center;
+}
+
+.plus-row {
+  text-align: right;
+}
+
+.add-row {
+  color: red;
+}
+
+.add-row:visited {
+  color: red;
+}
+
+.add-row:hover {
+  cursor: pointer;
+  color: red;
+}
