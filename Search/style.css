@@ -36,7 +36,7 @@ select {
 button {
   padding: 10px 30px;
   border: 0;
-  background-color: lightcoral;
+  background-color: white;
   color: black;
   text-transform: uppercase;
   font-family: 'Muli', sans-serif;
@@ -91,6 +91,11 @@ button:hover {
 .new-search-expression-row > select {
   margin-left: 10px;
 }
+
+.select-class {
+  font-family: 'Muli', sans-serif;
+}
+
 
 @keyframes expand {
   from {

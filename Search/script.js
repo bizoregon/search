@@ -1,4 +1,5 @@
-import { propSelector, newSearchExpressionRow } from './utilities/utilities.js';
+import { propSelector } from './utilities/utilities.js';
+import { newSearchExpressionBuilder } from './utilities/builders.js';
 
 const plusLink = document.querySelector('.plus-link');
 
@@ -16,7 +17,7 @@ plusLink.addEventListener('click', (e) => {
   const newRows = document.getElementsByClassName('new-search-expression-row');
 
   // Builds a search expression with dynamic values
-  const node = newSearchExpressionRow(searchExpressionCount);
+  const node = newSearchExpressionBuilder(searchExpressionCount);
 
   // Ensures the proper order of insertion for the nodes (top down)
   if (newRows.length > 0) {
