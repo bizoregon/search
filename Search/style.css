@@ -17,6 +17,47 @@ body {
   overflow: hidden;
 }
 
+h1 {
+  display: inline-block;
+}
+
+input {
+  padding: 0.25rem;
+  transform: translateY(-3px);
+  margin: 0 10px;
+}
+
+select {
+  padding: 0.25rem;
+  margin: 0 10px;
+  transform: translateY(-3px);
+}
+
+button {
+  padding: 10px 30px;
+  border: 0;
+  background-color: lightcoral;
+  color: black;
+  text-transform: uppercase;
+  font-family: 'Muli', sans-serif;
+  font-weight: bold;
+  transition: background-color 0.5s ease-in-out;
+}
+
+button:active {
+  transform: translateY(0.25rem);
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: crimson;
+}
+
+.plus-link {
+  margin: 0 10px;
+}
+
+
 .button-row {
   text-align: center;
 }
@@ -26,14 +67,34 @@ body {
 }
 
 .add-row {
-  color: red;
+  color: white;
+  font-size: 1.75rem;
+  transition: color 0.5s ease-in-out;
 }
 
 .add-row:visited {
-  color: red;
+  color: crimson;
 }
 
 .add-row:hover {
   cursor: pointer;
-  color: red;
+  color: crimson;
+}
+
+.new-search-expression-row {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 10px;
+  animation: expand .5s ease-in-out;
+}
+
+.new-search-expression-row > select {
+  margin-left: 10px;
+}
+
+@keyframes expand {
+  from {
+    transform: scale(0);
+    opacity: 0;
+  }
 }

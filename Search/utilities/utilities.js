@@ -41,12 +41,12 @@ function newSearchExpressionRow(id) {
   const html = `
     <div class="new-search-expression-row">
 
-      <select name="andOr" class="and-or-selector">
+      <select name="andOr" class="and-or-selector select-class">
         <option value="and">And</option>
         <option value="or">Or</option>
       </select>
 
-      <select data-id="prop${id}" name="property" class="property-selector">
+      <select data-id="prop${id}" name="property" class="property-selector select-class">
         <option value="name">Name</option>
         <option value="status">Status</option>
         <option value="closeDate">Close Date</option>
@@ -54,14 +54,14 @@ function newSearchExpressionRow(id) {
         <option value="totalProjectCost">Total Project Cost</option>
       </select>
 
-      <select data-id="operator${id}" name="operator" class="operator-selector">
+      <select data-id="operator${id}" name="operator" class="operator-selector select-class">
         <option value="is">Is</option>
         <option value="contains">Contains</option>
         <option value="startsWith">Starts With</option>
         <option value="endsWith">Ends With</option>
-    </select>
+      </select>
 
-    <span data-id="input${id}" class="search-input${id}"><input type="text"></span>
+      <span data-id="input${id}" class="search-input${id}"><input type="text"></span>
     </div>
   `;
   return html;
