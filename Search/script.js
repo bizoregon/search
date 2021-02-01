@@ -1,4 +1,4 @@
-import { propSelector, newSearchExpressionRow } from './utilities.js';
+import { propSelector, newSearchExpressionRow } from './utilities/utilities.js';
 
 const plusLink = document.querySelector('.plus-link');
 
