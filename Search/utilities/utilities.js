@@ -1,7 +1,12 @@
 import  { stringOptionsBuilder, dateTimeOptionsBuilder, numberOptionsBuilder } from './builders.js';
 import  { stringHandler, dateTimeHandler, numberHandler, floatHandler } from './handlers.js';
 
-/** Utility that removes all existing options in operatorSelector. */
+/** Utility that removes all existing options in operatorSelector.
+ *
+ * @param {int} id - The `id` of the row that is passed in by the plusLink event handler
+ *
+ * @example operatorSelectorCleaner(id);
+*/
 function operatorSelectorCleaner(id) {
   const selector = `[data-id='operator${id}']`;
   const operatorSelector = document.querySelector(selector);
@@ -13,9 +18,10 @@ function operatorSelectorCleaner(id) {
 
 /** Creates and adds new options to operatorSelector
  *
- * @example createAndAddNewOptions("string");
- *
  * @param {string} type - The string type of the data being passed in.
+ * @param {int} id - The `id` of the row that is passed in by the plusLink event handler.
+ *
+ * @example createAndAddNewOptions("string", searchExpressionCount);
  */
 function createAndAddNewOptions(type, id) {
   switch (type) {
@@ -33,9 +39,11 @@ function createAndAddNewOptions(type, id) {
   }
 }
 
-/** propSelector is the traffic cop for the whole thing.
- * @param {int} id - `id` is the id of the row that is
- * passed in by the plusLink event handler
+/** propSelector selects the appropriate handler that builds select options.
+ *
+ * @param {int} id - The `id` of the row that is passed in by the plusLink event handler.
+ *
+ * @example propSelector(id);
  */
 function propSelector(id) {
 

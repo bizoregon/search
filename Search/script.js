@@ -6,7 +6,7 @@ const plusLink = document.querySelector('.plus-link');
 let searchExpressionCount = 0;
 
 // Add the initial event listener
-propSelector(0);
+propSelector(searchExpressionCount);
 
 plusLink.addEventListener('click', (e) => {
   e.preventDefault();

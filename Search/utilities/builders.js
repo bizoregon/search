@@ -1,8 +1,10 @@
-/** Builds a specific input element based on the value of **type**.
- *
- * @example inputBuilder("string");
+/** Builds a specific input element based on the string value of **type**.
  *
  * @param {string} type - The **type** of the property being passed in as a string.
+ * @param {int} id - The `id` of the row that is passed in by the plusLink event handler.
+ *
+ * @example inputBuilder("string", id);
+ *
  */
 function inputBuilder(type, id) {
   let inputTextNode = document.createElement("input");
@@ -42,7 +44,12 @@ function inputBuilder(type, id) {
   searchInput.append(inputTextNode);
 }
 
-/** Builds new string-based operator options and adds them to operatorSelector */
+/** Builds new string-based operator options and adds them to operatorSelector.
+ *
+ * @param {int} id - The `id` of the row that is passed in by the plusLink event handler.
+ *
+ * @example stringOptionsBuilder(id);
+*/
 function stringOptionsBuilder(id) {
   const selector = `[data-id='operator${id}']`;
   const operatorSelector = document.querySelector(selector);
@@ -57,7 +64,12 @@ function stringOptionsBuilder(id) {
   operatorSelector.add(endsWithOptions, undefined);
 }
 
-/** Builds new datetime-based operator options and adds them to operatorSelector */
+/** Builds new datetime-based operator options and adds them to operatorSelector.
+ *
+ * @example dateTimeOptionsBuilder(id);
+ *
+ * @param {int} id - The `id` of the row that is passed in by the plusLink event handler.
+*/
 function dateTimeOptionsBuilder(id) {
   const selector = `[data-id='operator${id}']`;
   const operatorSelector = document.querySelector(selector);
@@ -72,7 +84,12 @@ function dateTimeOptionsBuilder(id) {
   operatorSelector.add(isOnOrAfterOption, undefined);
 }
 
-/** Builds new number-based operator options and adds them to operatorSelector */
+/** Builds new number-based operator options and adds them to operatorSelector.
+ *
+ * @example numberOptionsBuilder(id);
+ *
+ * @param {int} id - The `id` of the row that is passed in by the plusLink event handler.
+*/
 function numberOptionsBuilder(id) {
   const selector = `[data-id='operator${id}']`;
   const operatorSelector = document.querySelector(selector);
@@ -89,9 +106,11 @@ function numberOptionsBuilder(id) {
   operatorSelector.add(lessThanOrEqualToOption, undefined);
 }
 
-/** Builds dumb HTML with a dynamic data-id value
+/** Builds dumb HTML with a dynamic data-id value.
  *
- * @param {string} id - `id` is the dynamic data value
+ * @example newSearchExpressionBuilder(id);
+ *
+ * @param {int} id - The `id` of the row that is passed in by the plusLink event handler.
  */
 function newSearchExpressionBuilder(id) {
   const html = `
@@ -118,6 +137,7 @@ function newSearchExpressionBuilder(id) {
       </select>
 
       <span data-id="input${id}" class="search-input${id}"><input type="text"></span>
+
     </div>
   `;
   return html;
